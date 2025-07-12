@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../Styling/Weather.css'
 
 const api = {
   key: "762dbb5c7afd0fd85344f94ef403b544",
@@ -17,17 +18,14 @@ export default function Weather() {
       .then((res) => res.json())
       .then((result) => {
         setWeather(result);
+        console.log(weather)
       });
   };
 
   return (
-    <div >
-      <header>
-        {/* HEADER  */}
+    <div className="main" >
         <h1>Weather App</h1>
-
-        {/* Search Box - Input + Button  */}
-        <div>
+        <div className="inputs">
           <input
             type="text"
             placeholder="Enter city/town..."
@@ -38,20 +36,17 @@ export default function Weather() {
 
         {/* If weather is not undefined display results from API */}
         {typeof weather.main !== "undefined" ? (
-          <div>
+          <div className="results">
             {/* Location  */}
-            <p>{weather.name}</p>
-
+            <p>{weather.name}, {weather.sys.country}</p>
             {/* Temperature Celsius  */}
-            <p>{weather.main.temp}°C</p>
-
+            <p>{weather.main.temp} °C</p>
             {/* Condition (Sunny ) */}
             <p>{weather.weather[0].main}</p>
             <p>({weather.weather[0].description})</p>
           </div>
         ) : (
-          ""
+          <p className="results">Check your city name or enter one</p>
         )}
-      </header>
     </div>
   )};

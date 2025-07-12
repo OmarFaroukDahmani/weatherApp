@@ -1,0 +1,40 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main h1{
+    color: #D2C1B6 ;
+}
+.inputs input{
+    width: 200px;
+    height: 25px;
+    margin-right: 5px;
+    border-radius:5px ;
+    border: 0.5px solid gray;
+    background-color: #d3cfcd;
+    color: #ff4416;
+}
+.inputs button{
+    height: 30px;
+    border-radius: 5px ;
+    border: none;
+    color: #ff4416;
+    background-color: #456882;
+    transition: 0.5s;
+}
+
+.inputs button:hover{
+    background-color: #D2C1B6 ;
+}
+
+.results{
+    font-size: 20px;
+    color:#D2C1B6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
